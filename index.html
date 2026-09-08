@@ -4,73 +4,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberPortfolio</title>
+    <title>Web Development Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- link to fontawesome for inserting social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- link to css file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="#home" class="logo">CyberDev</a>
-        <ul class="nav-links">
+        <a href="#home" class="logo"><span class="logo-accent">&lt;/&gt;</span> Akash Kumar</a>
+        <div class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Full-Stack Developer</h1>
-            <p>Building digital experiences that merge creativity with technology</p>
-            <p class="highlight">Specializing in modern web development and cyber, systems</p>
-            <a href="#contact" class="cta-button">Let's Connect</a>
+            <div class="status-badge">
+                <span class="status-dot"></span> Available for Hire & Full-Stack Projects
+            </div>
+            <h1>Full-Stack Web Developer</h1>
+            <p class="hero-bio">Full Stack Developer skilled in building responsive, high-performance web applications
+                using <strong>React.js, Node.js, Express.js, Python, Django, MySQL,</strong> and
+                <strong>MongoDB</strong>. Specialized in REST APIs, secure authentication, and end-to-end web solutions.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#projects" class="cta-button primary-btn">
+                    View My Work <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="cta-button secondary-btn">
+                    Let's Connect
+                </a>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="profile.jpg" alt="Profile" class="profile-img">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Akash Kumar" class="profile-img">
+            </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2>Technical Expertise</h2>
+        <div class="section-title">
+            <h2>Technical Expertise</h2>
+            <p class="section-subtitle">Key tools and technologies I use to build robust digital solutions</p>
+            <div class="title-underline"></div>
+        </div>
         <div class="skills-grid">
             <div class="skill-card">
                 <i class="fas fa-code"></i>
                 <h3>Frontend Development</h3>
-                <p>HTML5, CSS3, JavaScript, React</p>
+                <p>HTML5, CSS3, JavaScript, React.js, Tailwind CSS, Bootstrap, Responsive UI</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-server"></i>
                 <h3>Backend Development</h3>
-                <p>Python, Django, SQL, Django Rest Framework</p>
+                <p>Python, Django, Node.js, Express.js, REST APIs</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Database & Tools</h3>
+                <p>MySQL, MongoDB, Git, GitHub</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-paint-brush"></i>
                 <h3>UI/UX Design</h3>
-                <p>Figma, Adobe XD, Prototyping, User Testing</p>
+                <p>Figma, Adobe XD, Prototyping, Modern Glassmorphism</p>
             </div>
         </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">Explore my recent full-stack applications, APIs, and web designs</p>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="backend">Backend & APIs</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card" data-category="fullstack" data-project="ecommerce">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <span class="project-badge">Full Stack</span>
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Web Platform</h3>
+                    <p>Modern online store with product catalog, cart management, secure user authentication, and
+                        payment integration.</p>
+                    <div class="project-tags">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="ecommerce">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415" target="_blank" rel="noopener noreferrer"
+                            class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" data-category="fullstack" data-project="taskmanager">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <span class="project-badge">Full Stack</span>
+                </div>
+                <div class="project-content">
+                    <h3>Student Management System</h3>
+                    <p>Workflow management application featuring Kanban boards, task assignments, role-based access, and
+                        analytics.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>MySQL</span>
+                        <span>REST API</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="taskmanager">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415" target="_blank" rel="noopener noreferrer"
+                            class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Amazon Clone Website</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Rock Paper Scissors</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Amazon Clone Website</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Tic Tac Toe</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 7 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Currency Converter</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 8 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>Jarvis Voice Assistant</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 9 -->
+            <article class="project-card" data-category="frontend" data-project="devportfolio">
+                <div class="project-card-header">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="project-badge">Frontend</span>
+                </div>
+                <div class="project-content">
+                    <h3>AI Chat Bot</h3>
+                    <p>Responsive, dynamic personal portfolio with interactive project showcase, custom animations, and
+                        glassmorphism UI.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="project-btn details-btn" data-project="devportfolio">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <a href="https://github.com/Akashkumar415/portfolio-website" target="_blank"
+                            rel="noopener noreferrer" class="project-btn code-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <span class="project-badge" id="modalCategory">Full Stack</span>
+                <h3 id="modalTitle">Project Title</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription" class="modal-desc"></p>
+                <div class="modal-section">
+                    <h4>Key Features & Highlights</h4>
+                    <ul id="modalFeatures" class="modal-features-list"></ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Technologies Used</h4>
+                    <div id="modalTags" class="project-tags"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modalGithubLink" href="https://github.com/Akashkumar415" target="_blank"
+                    rel="noopener noreferrer" class="project-btn code-btn">
+                    <i class="fab fa-github"></i> View GitHub Repo
+                </a>
+                <a id="modalContactLink" href="#contact" class="project-btn details-btn">
+                    <i class="fas fa-envelope"></i> Inquire About Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind, a question, or an opportunity? Feel free to reach out!
+            </p>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>I am available for full-stack developer roles, freelance projects, and collaborations.</p>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:akashkumar22112005@gmail.com">akashkumar22112005@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp / Phone</h4>
+                        <a href="https://wa.me/917050328688" target="_blank" rel="noopener noreferrer">+91
+                            7050328688</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/akash-kumar-86139528b" target="_blank"
+                            rel="noopener noreferrer">Akash Kumar</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/Akashkumar415" target="_blank"
+                            rel="noopener noreferrer">@Akashkumar415</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/8e2c42d048189913948ba4e5db4978f8"
+                method="POST">
+                <h3>Send a Message</h3>
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Portfolio Message from Akash's Website">
+
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="e.g. John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="e.g. john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" id="contactSubject" name="subject" required
+                        placeholder="Project Inquiry / Job Opportunity">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" rows="5" required
+                        placeholder="Tell me about your project or inquiry..."></textarea>
+                </div>
+
+                <div class="form-actions-group">
+                    <button type="submit" class="cta-button primary-btn submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                    <button type="button" id="whatsappSendBtn" class="cta-button secondary-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </button>
+                </div>
+
+                <div id="formStatus" class="form-status" style="display: none;"></div>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 CyberDev. All rights reserved.</p>
+        <p>&copy; 2024 Akash Kumar. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com/Akashkumar415"><i class="fab fa-github"></i></a>
-            <a href="https://instagram.com/savage_akash"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/917050328688"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.linkedin.com/in/akash-kumar-86139528b"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Akashkumar415" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://instagram.com/savage_akash" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917050328688" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                    class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/akash-kumar-86139528b" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 
     <!-- link to javascript file -->
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 
 
 </body>
